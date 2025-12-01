@@ -1,0 +1,73 @@
+/* Blog Section */
+.blog-section {
+  padding: 70px 0;
+  background: #f4f6fb;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+/* Blog Container */
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Blog Cards */
+.blog-card {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.blog-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.blog-link {
+  color: #1a73e8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer (matches your site) */
+.footer {
+  background: #002b5b;
+  color: white;
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
+.footer p {
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
