@@ -12,56 +12,90 @@
   <header>
     <div class="container header-inner">
       <img src="images/Logo%20for%20the%20Pod.png" class="logo-img" alt="Ball Laboratory Logo">
-
       <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="episodes.html">Episodes</a></li>
-    <li><a href="analysis.html">Analysis</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="episodes.html">Episodes</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
+  <!-- EPISODES SECTION -->
   <section class="section">
     <div class="container">
       <h3 class="section-title">All Episodes</h3>
 
       <div class="card-grid">
+
+        <!-- Episode 1 -->
         <div class="card">
           <h4>Episode 1 — What If the Blazers Drafted Michael Jordan in 1984?</h4>
           <p>In this premiere episode we run the scenario, analyze roster fit, and project seasons.</p>
-          <button class="btn-red">Play Episode</button>
+          <audio id="episode1" controls>
+            <source src="audio/episode1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <button class="btn-red" onclick="playEpisode('episode1')">Play</button>
+          <p><a href="audio/episode1.mp3" download>Download Episode 1</a></p>
         </div>
 
+        <!-- Episode 2 -->
         <div class="card">
           <h4>Episode 2 — What If Messi Chose Spain Over Argentina?</h4>
           <p>We explore national team dynamics, club legacy shifts, and emotional impact.</p>
-          <button class="btn-red">Play Episode</button>
+          <audio id="episode2" controls>
+            <source src="audio/episode2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <button class="btn-red" onclick="playEpisode('episode2')">Play</button>
+          <p><a href="audio/episode2.mp3" download>Download Episode 2</a></p>
         </div>
 
+        <!-- Episode 3 -->
         <div class="card">
           <h4>Episode 3 — What If the Suns Traded for Steph Curry?</h4>
-          <p>Roster construction, spacing, and dynasty projections for Phoenix.</p>
-          <button class="btn-red">Play Episode</button>
+          <p>Phoenix becomes a dynasty; Warriors never rise.</p>
+          <audio id="episode3" controls>
+            <source src="audio/episode3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <button class="btn-red" onclick="playEpisode('episode3')">Play</button>
+          <p><a href="audio/episode3.mp3" download>Download Episode 3</a></p>
         </div>
 
-        <div class="card">
-          <h4>Episode 4 —What If the Hand of God Was Called Off?</h4>
-          <p>We model alternative career arcs and team outcomes for Maradona.</p>
-          <button class="btn-red">Play Episode</button>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 The Ball Laboratory</p>
   </footer>
+
+  <!-- AUDIO SCRIPT -->
+  <script>
+    function playEpisode(id) {
+      const audios = document.querySelectorAll('audio');
+      audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+
+      const selectedAudio = document.getElementById(id);
+      if (selectedAudio) {
+        selectedAudio.play().catch(error => {
+          console.error("Playback failed:", error);
+        });
+      } else {
+        console.error("Audio element not found:", id);
+      }
+    }
+  </script>
 
 </body>
 </html>

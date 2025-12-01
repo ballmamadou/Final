@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Ball Laboratory</title>
-
+<link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 
 <body>
 
@@ -19,18 +17,16 @@
   <header>
     <div class="container header-inner">
       <img src="images/Logo%20for%20the%20Pod.png" class="logo-img" alt="Ball Laboratory Logo">
-
       <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="episodes.html">Episodes</a></li>
-    <li><a href="analysis.html">Analysis</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="episodes.html">Episodes</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -39,7 +35,7 @@
     <div class="container hero-content">
       <h2>Exploring Alternate Realities in FIFA & NBA</h2>
       <p>Every Friday — Where Tactics Meet Imagination</p>
-      <button class="cta">Play Latest Episode</button>
+      <button class="cta" onclick="playEpisode('episode1')">Play Latest Episode</button>
     </div>
   </section>
 
@@ -48,25 +44,42 @@
     <div class="container">
       <h3 class="section-title">Featured Episodes</h3>
 
-      <div class="card-grid">
-        <div class="card">
-          <h4>Episode 1 — What If the Blazers Drafted Michael Jordan in 1984?
-          <p>Portland becomes a dynasty with MJ; Chicago never gets its GOAT era.</p>
-          <button class="btn-red">Play</button>
-        </div>
-
-        <div class="card">
-          <h4>Episode 2 — What If Messi Chose Spain Over Argentina?</h4>
-          <p>Messi wins multiple trophies but loses emotional legacy with Argentina.</p>
-          <button class="btn-red">Play</button>
-        </div>
-
-        <div class="card">
-          <h4>Episode 3 — What If the Suns Traded for Steph Curry?</h4>
-          <p>Phoenix becomes a dynasty; Warriors never rise.</p>
-          <button class="btn-red">Play</button>
-        </div>
+      <!-- Episode 1 -->
+      <div class="card">
+        <h4>Episode 1 — What If the Blazers Drafted Michael Jordan in 1984?</h4>
+        <p>Portland becomes a dynasty with MJ; Chicago never gets its GOAT era.</p>
+        <audio id="episode1" controls>
+          <source src="audio/episode1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <button class="btn-red" onclick="playEpisode('episode1')">Play</button>
+        <p><a href="audio/episode1.mp3" download>Download Episode 1</a></p>
       </div>
+
+      <!-- Episode 2 -->
+      <div class="card">
+        <h4>Episode 2 — What If Messi Chose Spain Over Argentina?</h4>
+        <p>Messi wins multiple trophies but loses emotional legacy with Argentina.</p>
+        <audio id="episode2" controls>
+          <source src="audio/episode2.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <button class="btn-red" onclick="playEpisode('episode2')">Play</button>
+        <p><a href="audio/episode2.mp3" download>Download Episode 2</a></p>
+      </div>
+
+      <!-- Episode 3 -->
+      <div class="card">
+        <h4>Episode 3 — What If the Suns Traded for Steph Curry?</h4>
+        <p>Phoenix becomes a dynasty; Warriors never rise.</p>
+        <audio id="episode3" controls>
+          <source src="audio/episode3.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <button class="btn-red" onclick="playEpisode('episode3')">Play</button>
+        <p><a href="audio/episode3.mp3" download>Download Episode 3</a></p>
+      </div>
+
     </div>
   </section>
 
@@ -74,18 +87,16 @@
   <section class="analysis-section">
     <div class="container">
       <h3 class="section-title">Alternate Reality Analysis</h3>
-
       <div class="analysis-columns">
         <div class="analysis-card">
           <h4>FIFA Analysis</h4>
           <p>Deep tactical storytelling exploring football’s biggest what-if universes.</p>
-          <a href="#">Read More / Listen</a>
+          <a href="blog-fifa.html">Read More / Listen</a>
         </div>
-
         <div class="analysis-card">
           <h4>NBA Analysis</h4>
           <p>Stat-driven basketball alternate timelines brought to life.</p>
-          <a href="#">Read More / Listen</a>
+          <a href="blog-nba.html">Read More / Listen</a>
         </div>
       </div>
     </div>
@@ -95,41 +106,62 @@
   <section class="section">
     <div class="container">
       <h3 class="section-title">Latest Blog Posts</h3>
-
       <div class="blog-card">
         <h4>Behind the Mic: Building a Sports What-If Universe</h4>
         <p>An inside look at how each episode is planned, researched, and written.</p>
-        <a href="" class="blog-link">Read More</a>
+        <a href="blog-episode-behind-the-mic.html" class="blog-link">Read More</a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT + NEWSLETTER -->
-  <section class="about-news">
-    <div class="container about-news-grid">
-      
-      <div class="about-box">
-        <h3>About</h3>
-        <p>The Ball Laboratory dives deep into hypothetical sports realities across FIFA & NBA — every Friday.</p>
-        <button class="btn-green">Learn More</button>
-      </div>
+<section class="about-news">
+  <div class="container about-news-grid">
 
-      <div class="newsletter-box">
-        <h4>Join the Lab Crew</h4>
-        <div class="newsletter-inputs">
-          <input type="email" placeholder="Email Address" />
-          <button class="btn-red">Subscribe</button>
-        </div>
-      </div>
-
+    <!-- About Box -->
+    <div class="about-box">
+      <h3>About</h3>
+      <p>The Ball Laboratory dives deep into hypothetical sports realities across FIFA & NBA — every Friday.</p>
+      <a href="about.html" class="btn-green">Learn More</a>
     </div>
-  </section>
+
+    <!-- Newsletter Box -->
+    <div class="newsletter-box">
+      <h4>Join the Lab Crew</h4>
+      <div class="newsletter-inputs">
+        <input type="email" placeholder="Email Address" />
+        <button class="btn-red">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+      
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 The Ball Laboratory — Where Tactics Meet Imagination</p>
   </footer>
 
+  <!-- AUDIO SCRIPT -->
+  <script>
+    function playEpisode(id) {
+      const audios = document.querySelectorAll('audio');
+      audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+
+      const selectedAudio = document.getElementById(id);
+      if (selectedAudio) {
+        selectedAudio.play().catch(error => {
+          console.error("Playback failed:", error);
+        });
+      } else {
+        console.error("Audio element not found:", id);
+      }
+    }
+  </script>
+
 </body>
 </html>
-
